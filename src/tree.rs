@@ -17,7 +17,7 @@ pub enum Binar {
 /// A leaf may wants to save something like the probability of being some class.
 /// A interior node may wants to save some parameter which helps computing binary features.
 #[derive(Serialize, Deserialize)]
-enum Node<P, L> {
+pub enum Node<P, L> {
     Leaf(L),
     Interior {
         children: Box<(Node<P, L>, Node<P, L>)>,
@@ -135,8 +135,8 @@ pub struct DecisionTree<L, F>
 where
     F: TreeFunction,
 {
-    root: Option<Node<F::Param, L>>, // root-Node
-    functions: F, //  TreeFunction
+    pub root: Option<Node<F::Param, L>>, // root-Node
+    pub functions: F, //  TreeFunction
     pub params: TreeParameters,
 }
 

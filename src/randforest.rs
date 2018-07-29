@@ -51,7 +51,7 @@ pub struct RandomForest<L, F>
 where
     F: TreeFunction,
 {
-    subtrees: Vec<DecisionTree<L, F>>,
+    pub subtrees: Vec<DecisionTree<L, F>>,
 }
 
 impl<L, F> RandomForest<L, F>
