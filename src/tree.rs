@@ -20,8 +20,8 @@ pub enum Binar {
 pub enum Node<P, L> {
     Leaf(L),
     Interior {
-        children: Box<(Node<P, L>, Node<P, L>)>,
-        params: P,
+        pub children: Box<(Node<P, L>, Node<P, L>)>,
+        pub params: P,
     },
 }
 
